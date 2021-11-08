@@ -1,12 +1,17 @@
 <div id="top"></div>
  
  
-[![LinkedIn][linkedin-shield]][https://www.linkedin.com/in/junior-ribeirodev/]
+<!-- [![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url] -->
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
+  <a href="https://github.com/JuniorRibas/pay-me">
     <img src="https://travelpedia.com.br/wp-content/uploads/2018/09/dinheiro-icon.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -90,3 +95,20 @@ José Ribeiro - [Instagram](https://www.instagram.com/juniorribeiro__/) - joseri
  
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/JuniorRibas/pay-me.svg?style=for-the-badge
+[contributors-url]: https://github.com/JuniorRibas/pay-me/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/JuniorRibas/pay-me.svg?style=for-the-badge
+[forks-url]: https://github.com/JuniorRibas/pay-me/network/members
+[stars-shield]: https://img.shields.io/github/stars/JuniorRibas/pay-me.svg?style=for-the-badge
+[stars-url]: https://github.com/JuniorRibas/pay-me/stargazers
+[issues-shield]: https://img.shields.io/github/issues/JuniorRibas/pay-me.svg?style=for-the-badge
+[issues-url]: https://github.com/JuniorRibas/pay-me/issues
+[license-shield]: https://img.shields.io/github/license/JuniorRibas/pay-me.svg?style=for-the-badge
+[license-url]: https://github.com/JuniorRibas/pay-me/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://www.linkedin.com/in/junior-ribeirodev/
+[product-screenshot]: images/screenshot.png
