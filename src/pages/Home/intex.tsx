@@ -15,7 +15,7 @@ const Home: React.FC = () => {
         key: "60743686357",
         name: "José Ribeiro Alves Junior",
         version: "01",
-        value: 1.0,
+        value: 20.0,
       });
 
       console.log("Executou!");
