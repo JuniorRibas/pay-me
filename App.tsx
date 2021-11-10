@@ -1,6 +1,8 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import Home from "./src/pages/Home/intex";
+import { AppRouter } from "./src/routes";
+import { ThemeProvider } from "styled-components";
+
 import Appload from "expo-app-loading";
 import {
   useFonts,
@@ -8,6 +10,7 @@ import {
   Roboto_500Medium,
   Roboto_700Bold,
 } from "@expo-google-fonts/roboto";
+import theme from "./src/global/styles/theme";
 
 export default function App() {
   let [laod] = useFonts({
@@ -20,10 +23,10 @@ export default function App() {
     return <Appload />;
   } else {
     return (
-      <>
-        <Home />
+      <ThemeProvider theme={theme["light"]}>
+        <AppRouter />
         <StatusBar style="auto" />
-      </>
+      </ThemeProvider>
     );
   }
 }
