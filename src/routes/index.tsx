@@ -10,6 +10,7 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { Entypo } from "@expo/vector-icons";
 
 import Home from "../pages/Home/intex";
 import KeysPix from "../pages/KeysPix";
@@ -23,9 +24,29 @@ export const AppRouter = () => {
       <Tab.Navigator
         screenOptions={{
           headerShown: false,
+          tabBarActiveTintColor: "#603EB0",
+          tabBarInactiveTintColor: "#CCCC",
         }}
       >
-        <Tab.Screen name="Chaves" component={KeysPix} />
+        <Tab.Screen
+          name="Chaves"
+          component={KeysPix}
+          options={{
+            tabBarIcon: ({ color }) => {
+              return <Entypo name="list" size={24} color={color} />;
+            },
+          }}
+        />
+        <Tab.Screen
+          name="Cadastro"
+          component={Home}
+          options={{
+            title: "Nova Chave",
+            tabBarIcon: ({ color }) => {
+              return <Entypo name="squared-plus" size={24} color={color} />;
+            },
+          }}
+        />
       </Tab.Navigator>
     </NavigationContainer>
   );
