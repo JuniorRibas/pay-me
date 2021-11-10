@@ -8,6 +8,7 @@
 
 import React from "react";
 import { Text } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 import {
   Container,
@@ -48,15 +49,19 @@ const KeysPix: React.FC = () => {
 
 const Card = ({ banco, type }) => {
   return (
-    <ContainerCard>
-      <ContainerIconCard>
-        <IconKeyCard />
-      </ContainerIconCard>
-      <ContainerDescription>
-        <TextDescription>{banco}</TextDescription>
-        <TextDescriptionSecondary>{type}</TextDescriptionSecondary>
-      </ContainerDescription>
-    </ContainerCard>
+    <TouchableOpacity
+      onPress={() => alert(`Fazer QrCode para o banco ${banco}`)}
+    >
+      <ContainerCard>
+        <ContainerIconCard>
+          <IconKeyCard />
+        </ContainerIconCard>
+        <ContainerDescription>
+          <TextDescription>{banco}</TextDescription>
+          <TextDescriptionSecondary>{type}</TextDescriptionSecondary>
+        </ContainerDescription>
+      </ContainerCard>
+    </TouchableOpacity>
   );
 };
 
