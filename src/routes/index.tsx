@@ -12,11 +12,10 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Entypo } from "@expo/vector-icons";
 
-import Home from "../pages/Home/intex";
 import KeysPix from "../pages/KeysPix";
+import Cadastro from "../pages/Cadastro";
 
 const Tab = createBottomTabNavigator();
-const Stack = createNativeStackNavigator();
 
 export const AppRouter = () => {
   return (
@@ -39,7 +38,7 @@ export const AppRouter = () => {
         />
         <Tab.Screen
           name="Cadastro"
-          component={Home}
+          component={Cadastro}
           options={{
             title: "Nova Chave",
             tabBarIcon: ({ color }) => {
