@@ -1,10 +1,11 @@
 import styled from "styled-components/native";
 import { heightPercentageToDP } from "react-native-responsive-screen";
 import { FontAwesome, MaterialCommunityIcons } from "@expo/vector-icons";
+import { LinearGradient } from "expo-linear-gradient";
 
 export const Container = styled.View``;
 
-export const ContainerHeader = styled.View`
+export const ContainerHeader = styled(LinearGradient)`
   height: ${heightPercentageToDP(15)}px;
   align-items: flex-end;
   flex-direction: row;
@@ -13,7 +14,14 @@ export const ContainerHeader = styled.View`
   background-color: ${({ theme }) => theme.colors.primary};
 `;
 
-export const TextChaves = styled.Text``;
+export const TextChaves = styled.Text`
+  font-family: ${({ theme }) => theme.fonts.medium};
+
+  color: ${({ theme }) => theme.colors.primary};
+  font-size: ${heightPercentageToDP(2)}px;
+
+  margin-bottom: 10px;
+`;
 
 export const ContainerBtn = styled.TouchableOpacity``;
 

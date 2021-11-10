@@ -28,7 +28,7 @@ import {
 const KeysPix: React.FC = () => {
   return (
     <Container>
-      <ContainerHeader>
+      <ContainerHeader colors={["#603EB0", "#9867C5"]} end={{ x: 1, y: 1 }}>
         <ContainerBtn>
           <IconKey />
         </ContainerBtn>
