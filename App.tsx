@@ -2,7 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { AppRouter } from "./src/routes";
 import { ThemeProvider } from "styled-components";
-
+import AppProviderHooks from "./src/hooks";
 import Appload from "expo-app-loading";
 import {
   useFonts,
@@ -24,8 +24,10 @@ export default function App() {
   } else {
     return (
       <ThemeProvider theme={theme["light"]}>
-        <AppRouter />
-        <StatusBar style="auto" />
+        <AppProviderHooks>
+          <AppRouter />
+          <StatusBar style="auto" />
+        </AppProviderHooks>
       </ThemeProvider>
     );
   }
