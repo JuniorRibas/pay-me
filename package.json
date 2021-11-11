@@ -23,6 +23,7 @@
     "expo-splash-screen": "~0.13.3",
     "expo-status-bar": "~1.1.0",
     "expo-updates": "~0.10.5",
+    "lottie-react-native": "4.0.3",
     "qrcode-pix": "3.0.3",
     "qrcode.react": "^1.0.1",
     "react": "17.0.1",
