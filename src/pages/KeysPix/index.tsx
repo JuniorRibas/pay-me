@@ -9,14 +9,11 @@
 import React from "react";
 import { Text } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import Header from "../../components/Header";
 
 import {
   Container,
-  ContainerHeader,
   TextChaves,
-  ContainerBtn,
-  TextHeader,
-  IconKey,
   ContainerBody,
   ContainerCard,
   ContainerIconCard,
@@ -26,16 +23,12 @@ import {
   TextDescriptionSecondary,
 } from "./styles";
 
+Header;
+
 const KeysPix: React.FC = () => {
   return (
     <Container>
-      <ContainerHeader colors={["#603EB0", "#9867C5"]} end={{ x: 1, y: 1 }}>
-        <ContainerBtn>
-          <IconKey />
-        </ContainerBtn>
-        <TextHeader>Pay me : )</TextHeader>
-        <ContainerBtn></ContainerBtn>
-      </ContainerHeader>
+      <Header />
 
       <ContainerBody>
         <TextChaves> Suas Chaves </TextChaves>
