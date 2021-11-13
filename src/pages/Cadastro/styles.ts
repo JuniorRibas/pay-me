@@ -10,7 +10,7 @@ export const Container = styled.View`
 `;
 
 export const ContainerForm = styled.View`
-  height: ${heightPercentageToDP(50)}px;
+  height: ${heightPercentageToDP(55)}px;
   width: ${widthPercentageToDP(90)}px;
   margin-top: 10px;
   border-radius: 10px;
