@@ -10,6 +10,7 @@ import React from "react";
 import { Text } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import Header from "../../components/Header";
+import { useKeys } from "../../hooks/useKeys";
 
 import {
   Container,
@@ -26,15 +27,18 @@ import {
 Header;
 
 const KeysPix: React.FC = () => {
+  const { keys } = useKeys();
   return (
     <Container>
       <Header />
 
       <ContainerBody>
         <TextChaves> Suas Chaves </TextChaves>
-        <Card banco="Caixa" type="Celular" />
-        <Card banco="NuBank" type="CPF" />
-        <Card banco="Inter" type="E-mail" />
+
+        {keys.length > 0 &&
+          keys.map((item) => (
+            <Card key={item.id} banco={item.banco} type={item.type} />
+          ))}
       </ContainerBody>
     </Container>
   );

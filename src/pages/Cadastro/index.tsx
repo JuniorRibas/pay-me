@@ -1,8 +1,12 @@
-import React, { useEffect, useRef, useState } from "react";
-import { Keyboard, StyleSheet, View } from "react-native";
+import React, { useCallback, useEffect, useRef, useState } from "react";
+import { Alert, Keyboard, StyleSheet, View } from "react-native";
+import RNPickerSelect from "react-native-picker-select";
+
+import { useNavigation } from "@react-navigation/native";
+
 import Header from "../../components/Header";
 import LottieView from "lottie-react-native";
-import RNPickerSelect from "react-native-picker-select";
+import { useKeys } from "../../hooks/useKeys";
 
 import {
   Container,
@@ -15,10 +19,32 @@ import {
   heightPercentageToDP,
   widthPercentageToDP,
 } from "react-native-responsive-screen";
-import { TouchableOpacity } from "react-native-gesture-handler";
 
 const Cadastro: React.FC = () => {
-  const [chave, setChave] = useState(``);
+  const navigation = useNavigation();
+  const { register, keys } = useKeys();
+  const [typeKey, setTypeKey] = useState(``);
+  const [banco, setBanco] = useState("");
+  const [key, setkey] = useState("");
+
+  const registerKey = useCallback(() => {
+    if (typeKey != "" && banco != "" && key != "") {
+      const exist = keys.find((item) => item.key === key);
+
+      if (exist) {
+        Alert.alert("Essa chave ja existe!");
+        return;
+      }
+
+      register({ banco, key, type: typeKey, id: new Date().getTime() });
+      setTypeKey("");
+      setBanco("");
+      setkey("");
+      navigation.navigate("Chaves");
+    } else {
+      Alert.alert("Preecha corretamente os campos!");
+    }
+  }, [banco, key, typeKey]);
 
   return (
     <Container>
@@ -34,8 +60,17 @@ const Cadastro: React.FC = () => {
           autoPlay={true}
           source={require("./../../../assets/lottie/42476-register.json")}
         />
-        <TextInputKey placeholder="Banco" />
-        <TextInputKey placeholder="Chave Pix" />
+        <TextInputKey
+          placeholder="Banco"
+          value={banco}
+          onChangeText={setBanco}
+        />
+
+        <TextInputKey
+          placeholder="Chave Pix"
+          value={key}
+          onChangeText={setkey}
+        />
 
         <View
           style={{
@@ -50,7 +85,7 @@ const Cadastro: React.FC = () => {
               color: "black",
             }}
             style={pickerSelectStyles}
-            onValueChange={(value) => setChave(value)}
+            onValueChange={(value) => setTypeKey(value)}
             items={[
               { label: "Cpf", value: "cpf" },
               { label: "E-mail", value: "email" },
@@ -61,6 +96,7 @@ const Cadastro: React.FC = () => {
 
         <BtnSend
           onPress={() => {
+            registerKey();
             Keyboard.dismiss();
           }}
         >
