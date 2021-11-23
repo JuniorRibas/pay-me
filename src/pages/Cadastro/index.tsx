@@ -27,7 +27,7 @@ const Cadastro: React.FC = () => {
   const [banco, setBanco] = useState("");
   const [key, setkey] = useState("");
 
-  const registerKey = useCallback(() => {
+  const registerKey = useCallback(async () => {
     if (typeKey != "" && banco != "" && key != "") {
       const exist = keys.find((item) => item.key === key);
 
@@ -36,7 +36,7 @@ const Cadastro: React.FC = () => {
         return;
       }
 
-      register({ banco, key, type: typeKey, id: new Date().getTime() });
+      await register({ banco, key, type: typeKey, id: new Date().getTime() });
       setTypeKey("");
       setBanco("");
       setkey("");
