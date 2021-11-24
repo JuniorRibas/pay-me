@@ -11,7 +11,7 @@ import { SafeAreaView, Text, KeyboardAvoidingView } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
 import QRCode from "react-native-qrcode-svg";
-import MaskInput, { createNumberMask } from "react-native-mask-input";
+import MaskInput, { createNumberMask, Masks } from "react-native-mask-input";
 import BottomSheet, {
   BottomSheetView,
   BottomSheetTextInput,
@@ -36,6 +36,8 @@ import {
   Input,
   BtnPix,
   TextBtnPix,
+  BtnDeleteKey,
+  TextBtnDeleteKey,
 } from "./styles";
 
 const dollarMask = createNumberMask({
@@ -46,7 +48,7 @@ const dollarMask = createNumberMask({
 });
 
 const KeysPix: React.FC = () => {
-  const { keys } = useKeys();
+  const { keys, removeById } = useKeys();
   const [QrCodePix, setQrCodePix] = useState("");
 
   const [value, setValue] = React.useState("");
@@ -92,6 +94,14 @@ const KeysPix: React.FC = () => {
     }
   }, [value, keySet]);
 
+  const removerKey = useCallback(async () => {
+    console.log(`removendo`);
+    if (keySet) {
+      await removeById(keySet.id);
+      handleSheetChange(0);
+    }
+  }, [keySet]);
+
   return (
     <KeyboardAvoidingView style={{ flex: 1 }} behavior="position" enabled>
       <Container>
@@ -121,17 +131,20 @@ const KeysPix: React.FC = () => {
         >
           <BottomSheetView>
             <QrCodeContainer>
+              <BtnDeleteKey onPress={() => removerKey()}>
+                <TextBtnDeleteKey>Apagar chave</TextBtnDeleteKey>
+              </BtnDeleteKey>
               {QrCodePix.length > 0 && <QRCode value={QrCodePix} size={200} />}
             </QrCodeContainer>
             <FormContainer>
               <Input
                 keyboardType="decimal-pad"
                 value={value}
-                mask={dollarMask}
+                mask={Masks.BRL_CURRENCY}
                 onChangeText={(masked, unmasked) => {
                   setValue(unmasked); // assuming you typed "123456":
                   console.log(masked); // "R$ 1.234,56"
-                  console.log(+unmasked / 100); // "123456"
+                  console.log(unmasked); // "123456"
                 }}
               />
               <BtnPix onPress={getpix}>

@@ -3,8 +3,9 @@ import {
   heightPercentageToDP,
   widthPercentageToDP,
 } from "react-native-responsive-screen";
-import { FontAwesome, MaterialCommunityIcons } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import MaskInput from "react-native-mask-input";
+import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 
 export const Container = styled.View``;
 
@@ -80,6 +81,7 @@ export const TextDescriptionSecondary = styled.Text`
 `;
 
 export const QrCodeContainer = styled.View`
+  position: relative;
   height: 65%;
   justify-content: center;
   align-items: center;
@@ -120,4 +122,20 @@ export const TextBtnPix = styled.Text`
   color: ${({ theme }) => theme.colors.shape};
   font-family: ${({ theme }) => theme.fonts.medium};
   font-size: ${heightPercentageToDP(2)}px;
+`;
+
+export const BtnDeleteKey = styled.TouchableOpacity`
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  padding: 5px;
+  margin-right: 10px;
+  height: ${RFValue(25)}px;
+  border-radius: 5px;
+  background-color: ${({ theme }) => theme.colors.shape};
+`;
+
+export const TextBtnDeleteKey = styled.Text`
+  color: ${({ theme }) => theme.colors.black};
+  font-family: ${({ theme }) => theme.fonts.medium};
 `;

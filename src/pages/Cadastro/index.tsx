@@ -37,7 +37,6 @@ const Cadastro: React.FC = () => {
       }
 
       await register({ banco, key, type: typeKey, id: new Date().getTime() });
-      setTypeKey("");
       setBanco("");
       setkey("");
       navigation.navigate("Chaves");

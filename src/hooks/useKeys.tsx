@@ -16,6 +16,7 @@ interface Keys {
 
 interface KeysContext {
   keys: Keys[];
+  removeById(id: string | number): Promise<Keys[]>;
   findKey(id: string | number): Keys;
   register(key: Keys): Promise<Keys>;
 }
@@ -41,6 +42,18 @@ export const KeysProvider: React.FC = ({ children }) => {
     [keys]
   );
 
+  const removeById = useCallback(
+    async (id: string | number) => {
+      var keysExist = keys.filter((item) => item.id !== id);
+
+      await AsyncStorage.setItem("@Pay-me:keys", JSON.stringify(keysExist));
+      console.log(keysExist);
+      setKeys(keysExist);
+      return keysExist;
+    },
+    [keys]
+  );
+
   useEffect(() => {
     const carrega = async () => {
       const value = await AsyncStorage.getItem("@Pay-me:keys");
@@ -53,7 +66,7 @@ export const KeysProvider: React.FC = ({ children }) => {
   }, []);
 
   return (
-    <KeysContex.Provider value={{ keys, findKey, register }}>
+    <KeysContex.Provider value={{ keys, findKey, register, removeById }}>
       {children}
     </KeysContex.Provider>
   );
