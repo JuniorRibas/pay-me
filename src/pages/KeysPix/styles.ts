@@ -1,7 +1,10 @@
 import styled from "styled-components/native";
-import { heightPercentageToDP } from "react-native-responsive-screen";
+import {
+  heightPercentageToDP,
+  widthPercentageToDP,
+} from "react-native-responsive-screen";
 import { FontAwesome, MaterialCommunityIcons } from "@expo/vector-icons";
-import { LinearGradient } from "expo-linear-gradient";
+import MaskInput from "react-native-mask-input";
 
 export const Container = styled.View``;
 
@@ -74,4 +77,47 @@ export const TextDescription = styled.Text`
 export const TextDescriptionSecondary = styled.Text`
   font-family: ${({ theme }) => theme.fonts.medium};
   color: ${({ theme }) => theme.colors.primary};
+`;
+
+export const QrCodeContainer = styled.View`
+  height: 65%;
+  justify-content: center;
+  align-items: center;
+  background-color: ${({ theme }) => theme.colors.primary};
+`;
+
+export const FormContainer = styled.View`
+  align-items: center;
+  margin-top: 20px;
+`;
+
+export const Input = styled(MaskInput)`
+  height: ${heightPercentageToDP(7)}px;
+  width: ${widthPercentageToDP(80)}px;
+
+  font-family: ${({ theme }) => theme.fonts.medium};
+  font-size: ${heightPercentageToDP(3)}px;
+
+  text-align: center;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: ${({ theme }) => theme.colors.primary2};
+`;
+
+export const BtnPix = styled.TouchableOpacity`
+  height: ${heightPercentageToDP(7)}px;
+  width: ${widthPercentageToDP(50)}px;
+
+  margin-top: 20px;
+  border-radius: 20px;
+
+  justify-content: center;
+  align-items: center;
+  background-color: ${({ theme }) => theme.colors.primary2};
+`;
+
+export const TextBtnPix = styled.Text`
+  color: ${({ theme }) => theme.colors.shape};
+  font-family: ${({ theme }) => theme.fonts.medium};
+  font-size: ${heightPercentageToDP(2)}px;
 `;
