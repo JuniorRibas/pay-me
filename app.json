@@ -3,6 +3,16 @@
     "name": "pay-me",
     "slug": "pay-me",
     "version": "1.0.0",
+    "icon": "./assets/app-icon.png",
+    "ios": {
+      "bundleIdentifier": "com.payme.pay.me",
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "package": "com.payme.pay.me",
+      "versionCode": 2,
+      "permissions":["INTERNET", "SYSTEM_ALERT_WINDOW", "VIBRATE", "READ_EXTERNAL_STORAGE", "WRITE_EXTERNAL_STORAGE"]
+    },
     "assetBundlePatterns": [
       "**/*"
     ]
