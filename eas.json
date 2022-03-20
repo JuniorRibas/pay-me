@@ -10,12 +10,17 @@
     "preview": {
       "distribution": "internal"
     },
-    "production": {}
+    "production": {
+      "android": {
+        "autoIncrement": true
+      }
+    }
   },
   "submit": {
     "production": {
       "android": {
-        "serviceAccountKeyPath": "./pay-me-key-gpc.json" 
+        "serviceAccountKeyPath": "./pc-api-5464607609785529355-193-85cf449084f6.json",
+        "track": "production"
       }
     }
   }

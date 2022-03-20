@@ -10,8 +10,14 @@
     },
     "android": {
       "package": "com.payme.pay.me",
-      "versionCode": 3,
-      "permissions":["INTERNET", "SYSTEM_ALERT_WINDOW", "VIBRATE", "READ_EXTERNAL_STORAGE", "WRITE_EXTERNAL_STORAGE"]
+      "versionCode": 7,
+      "permissions": [
+        "INTERNET",
+        "SYSTEM_ALERT_WINDOW",
+        "VIBRATE",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"
+      ]
     },
     "assetBundlePatterns": [
       "**/*"

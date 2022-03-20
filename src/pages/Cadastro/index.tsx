@@ -41,7 +41,7 @@ const Cadastro: React.FC = () => {
       setkey("");
       navigation.navigate("Chaves");
     } else {
-      Alert.alert("Preecha corretamente os campos!");
+      Alert.alert("Preecha corretamente os campos!!");
     }
   }, [banco, key, typeKey]);
 
