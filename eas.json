@@ -1,0 +1,22 @@
+{
+  "cli": {
+    "version": ">= 0.48.1"
+  },
+  "build": {
+    "development": {
+      "distribution": "internal", 
+      "developmentClient": true
+    },
+    "preview": {
+      "distribution": "internal"
+    },
+    "production": {}
+  },
+  "submit": {
+    "production": {
+      "android": {
+        "serviceAccountKeyPath": "./pay-me-key-gpc.json" 
+      }
+    }
+  }
+}
